@@ -1,0 +1,20 @@
+---
+const { color, imgSource, title } = Astro.props;
+const textColor = `text-${color}`;
+---
+
+<section class="landing-section h-screen w-screen flex flex-col justify-between text-center relative overflow-hidden"
+data-header-color={color}
+>
+  <div class={`${textColor} pt-32`}>
+    <h2 class="text-4xl mb-2">{title}</h2>
+    <p class="text-sm underline">Concertar una prueba de conducción</p>
+  </div>
+  <div class="flex justify-center gap-4">
+    <a href="#" class="text-white bg-black/80 hover:bg-black transition-colors duration-300 text-sm px-10 py-2 rounded-sm mb-20 self-center">Explorar inventario</a>
+    <a href="#" class="text-black bg-white/80 hover:bg-white transition-colors duration-300 text-sm px-10 py-2 rounded-sm mb-20 self-center">Pedido personalizado</a>
+  </div>
+  <div class="absolute top-0 left-0 w-full h-full flex justify-center items-center -z-10">
+    <img src={imgSource} alt={title} class="object-cover h-full w-full">
+  </div>
+</section>
